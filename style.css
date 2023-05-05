@@ -1,0 +1,624 @@
+/* Alla element börjar med nollställda marginal, padding och box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Elementet har en flex-container med en column riktning  */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
+
+}
+
+/* header är också en flex-container med en rikting åt sidan med grå bakrundsfärg */
+header {
+    display: flex;
+    background-color: rgb(72, 72, 72);
+    position: unset;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/* en flex container med 20px mellanrum mellan länkar */
+.header-links {
+    display: flex;
+    color: #aca2a2;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+/* länkarna har en marginal på höger sida på 50px och utan dekoration */
+.header-links a {
+    color: #aca2a2;
+    margin-right: 50px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/* ikonerna har också en marginal åt höger på 50px */
+.header-links i {
+    color: #aca2a2;
+    margin-right: 50px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* ändrar sin färg när sidan är besökt */
+.header-links a:active,
+.header-links a:visited,
+.header-links a {
+    color: lightgray;
+}
+
+/* Gör om samma kod som ovan till mobilresponsiv */
+@media (max-width: 767px) {
+    .header-links {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .header-links a {
+        margin-right: 2px;
+        font-size: 10px;
+    }
+
+    .header-links i {
+        color: #aca2a2;
+        margin-right: 10px;
+        font-size: 10px;
+        text-decoration: none;
+    }
+}
+
+/* flexbox för att centrera innehållet och har en liten marginal uppe och nere */
+.main-starter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-size: 10px;
+    color: #626262;
+}
+
+/* ändrar till mobilresponsiv och columnform,
+ minskar och tar bort marginal och storlek */
+@media screen and (max-width: 768px) {
+    .main-starter {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .main-starter h1 {
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .buy-link {
+        font-size: 0.8rem;
+    }
+}
+
+.main-starter a {
+    font-size: 15px;
+    color: rgb(66, 169, 203);
+}
+
+/* ändrar färgen när sidan/länkar är besökt */
+.main-starter a:active,
+.main-starter a:visited,
+.main-starter a {
+    color: rgb(66, 169, 203);
+}
+
+/* Stilregler för div elementet */
+.main-divstart {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 1px;
+    height: 56rem;
+    background-color: black;
+}
+
+/* Här nedan kommer också massa stilregler för h2 och länkar */
+.main-divstart h2:first-child {
+    color: white;
+    font-size: 70px;
+    margin-top: 60px;
+    text-align: center;
+    line-height: 1;
+}
+
+.main-divstart h2:last-child {
+    color: white;
+    font-size: 40px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+.main-two-links {
+    display: flex;
+    justify-content: center;
+}
+
+.main-two-links a {
+    display: inline-block;
+    padding: 25px 15px;
+    color: rgb(14, 64, 81);
+    text-decoration: none;
+    font-size: 30px;
+    /* border-radius: 5px; */
+}
+
+/* Ändrar färgen när länkarna besöks */
+.main-two-links a:active,
+.main-two-links a:visited,
+.main-two-links a {
+    color: rgb(66, 169, 203);
+}
+
+/* Stil för bilderna på diven. sätter också bilderna på fronten */
+.img-container {
+    position: relative;
+    bottom: 26rem;
+    display: flex;
+    z-index: 1;
+    justify-content: center;
+    align-items: flex-end;
+
+}
+
+/* ser till att bilden anpassas prop */
+.img-div img {
+    width: 100%;
+    height: auto;
+}
+
+/* sätter till mobilanpassad sida av ovanstående kod */
+@media (max-width: 667px) {
+    .img-container {
+        margin-left: 0;
+        padding: 0.5rem;
+        align-items: center;
+    }
+
+    .img-div {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .img-div:last-child {
+        margin-bottom: 10px;
+    }
+}
+
+/* centrerar element */
+.flex-centered-layout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* stil för den vita diven och dess element på */
+.white-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-top: 1px;
+    height: 550px;
+    background-color: white;
+}
+
+/* stil för första element i diven */
+.white-div h2:first-child {
+    color: black;
+    font-size: 70px;
+    margin-top: -20rem;
+    text-align: center;
+    line-height: 1;
+}
+
+/* stil för sista element i diven */
+.white-div h2:last-child {
+    color: black;
+    font-size: 35px;
+    margin-top: 20px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* stil för de två länkarna på vita diven, justering */
+.white-div-two-links {
+    display: flex;
+    justify-content: center;
+    margin-top: -14rem;
+}
+
+/* stil för själva länkarna, utseende */
+.white-div-two-links a {
+    position: relative;
+    display: inline-block;
+    margin: 20px 10px;
+    padding: 10px 15px;
+    top: -33rem;
+    color: rgb(66, 169, 203);
+    text-decoration: none;
+    font-size: 26px;
+
+}
+
+/* håller bild ochs til för bild, justerar */
+.img-container2 {
+    position: relative;
+    top: -20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+ 
+
+/* storlek på bild */
+.img-div2 img {
+    max-width: 100%;
+    transform: scale(3.5);
+}
+
+/* ändrar till mobilresponsiv av kod ovan */
+@media only screen and (max-width: 667px) {
+    .white-div h2:first-child {
+        font-size: 40px;
+        margin-top: -8rem;
+    }
+
+    .white-div h2:last-child {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .white-div-two-links {
+        margin-top: -5rem;
+    }
+
+    .white-div-two-links a {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .img-container2 {
+        bottom: 10%;
+    }
+
+    .img-div2 img {
+        transform: scale(1);
+        margin-left: -20px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .white-div h2:first-child {
+        font-size: 40px;
+        margin-top: -8rem;
+    }
+
+    .white-div h2:last-child {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+
+    .white-div-two-links {
+        margin-top: -5rem;
+    }
+
+    .white-div-two-links a {
+        margin: 5px;
+        font-size: 20px;
+    }
+
+    .img-container2 {
+        bottom: 10%;
+    }
+
+    .img-div2 img {
+        transform: scale(1);
+        margin-left: -20px;
+    }
+}
+
+
+footer {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5px;
+    height: auto;
+    background-color: #c3c0c0;
+}
+
+/* elementet i footern, med justering etc för innehåll
+med en linje under */
+.footer-disclaimer {
+    position: relative;
+    display: flex;
+     flex-wrap: wrap; 
+    align-items: center;
+    font-size: 16px;
+    margin-top: 1rem;
+    margin-left: 23rem;
+    margin-right: 23rem;
+    color: #897f7f;
+    border-bottom: 1px solid black;
+}
+
+
+/* gör att mina columnrader börjar från samma linje */
+.cont {
+    position: relative;
+    display: flex;
+    /* justify-content: center; */
+    
+}
+
+
+/* betämemr storlek och färg på länkar när används */
+a:active,
+a:visited,
+a {
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* stil för h2 rubriker */
+.h2-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+/* tar bort färg och dekoration på länk */
+a.h2-title {
+    color: none;
+    text-decoration: none;
+}
+
+.h2-in-title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+a.h2-in-title {
+    color: none;
+    text-decoration: none;
+}
+
+/* tar bort list prickar */
+ul {
+    list-style: none;
+}
+
+/* nedanför är stilregler och justeringar för alla columnrader i footer */
+.columnrad-1 {
+    display: flex;
+    display: inline-block;
+    text-align: left;
+    line-height: 25px;
+    margin-left: 0;
+    font-size: 30px;
+    margin-top: 1rem;
+}
+
+.columnrad-2 {
+    display: flex;
+    display: inline-block;
+    text-align: left;
+    font-size: 30px;
+    line-height: 25px;
+    margin-left: 60px;
+    margin-top: 1rem;
+}
+
+.columnrad-3 {
+    display: flex;
+    display: inline-block;
+    text-align: left;
+    font-size: 30px;
+    line-height: 25px;
+    margin-left: 60px;
+    margin-top: 1rem;
+}
+
+.columnrad-4 {
+    display: flex;
+    display: inline-block;
+    text-align: left;
+    font-size: 30px;
+    line-height: 25px;
+    margin-left: 60px;
+    margin-top: 1rem;
+}
+
+.columnrad-5 {
+    display: flex;
+    display: inline-block;
+    text-align: left;
+    font-size: 30px;
+    line-height: 25px;
+    margin-left: 60px;
+    margin-top: 1rem;
+}
+
+.links-over-line {
+    display: flex;
+    font-size: 11px;
+    margin-left: -36rem;
+
+}
+
+.links-over-line a {
+    color: #0072c6;
+    text-decoration: underline;
+}
+
+
+/* stil för sista textrader nedanör */
+.text-under-line {
+    font-size: 11px;
+    margin-left: -54rem;
+}
+
+.slut-text {
+    font-size: 25px;
+    margin-left: -32rem;
+}
+
+@media only screen and (max-width: 1024px) {
+    footer {
+      height: auto;
+    }
+  
+    .footer-disclaimer {
+      margin: 1rem 1.5rem;
+      text-align: left;
+    }
+  
+    .cont {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .product-list {
+      display: none;
+    }
+  
+    .columnrad-1,
+    .columnrad-2,
+    .columnrad-3,
+    .columnrad-4,
+    .columnrad-5 {
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 18px;
+      line-height: 22px;
+      text-align: left;
+    }
+  
+    .links-over-line,
+    .text-under-line,
+    .slut-text {
+      margin-left: 0;
+      text-align: left;
+    }
+  
+    .links-over-line a {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  
+    .text-under-line {
+      font-size: 14px;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .slut-text {
+      font-size: 20px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+
+/* gör ovan kod mobilresponsiv */
+@media only screen and (max-width: 667px) {
+    footer {
+      height: auto;
+    }
+  
+    .footer-disclaimer {
+      margin: 1rem 1.5rem;
+      text-align: center;
+      text-align: left;
+    }
+  
+    .cont {
+      flex-direction: column;
+      align-items: center;
+      text-align: left;
+      margin-left: 1.5rem;
+    }
+  
+    .columnrad-1,
+    .columnrad-2,
+    .columnrad-3,
+    .columnrad-4,
+    .columnrad-5 {
+      margin: 0;
+      margin-top: 1rem;
+      font-size: 18px;
+      line-height: 20px;
+      text-align: center;
+    }
+
+    .product-list {
+        display: none;
+    }
+  
+    .links-over-line,
+    .text-under-line,
+    .slut-text {
+      margin-left: 0;
+      text-align: center;
+    }
+  
+    .links-over-line a {
+      font-size: 14px;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+  
+    .text-under-line {
+      font-size: 14px;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+  
+    .slut-text {
+      font-size: 20px;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+  }
+  
+    
+
+
+  
+
+
+    
